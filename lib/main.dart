@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:karobar/screens/account_screen.dart';
-import 'package:karobar/screens/itemsList.dart';
-import 'package:karobar/screens/order_list.dart';
+import 'package:karobar/screens/Retailer/order_List.dart';
+import 'package:karobar/screens/WholeSeller/item_add_screen.dart';
+import 'package:karobar/screens/orders_accepted.dart';
+
+import 'file:///C:/Users/haseeb/AndroidStudioProjects/karobar/lib/screens/WholeSeller/account_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,17 +18,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
       ),
-      home: HomePage(),
+      home: WholeSellerHomePage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
+class WholeSellerHomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _WholeSellerHomePageState createState() => _WholeSellerHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _WholeSellerHomePageState extends State<WholeSellerHomePage> {
   int selectedIndex = 0;
   PageController _pageController = PageController();
   @override
@@ -41,13 +43,20 @@ class _HomePageState extends State<HomePage> {
                 duration: Duration(microseconds: 600), curve: Curves.linear);
           });
         },
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.grey[400],
         selectedItemColor: Colors.black,
+        selectedFontSize: 9,
+        unselectedFontSize: 6,
+        unselectedItemColor: Colors.black,
+        showUnselectedLabels: true,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'Home'),
+              icon: Icon(Icons.home_outlined), label: 'Item Add'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined), label: 'Order List'),
+              icon: Icon(Icons.shopping_cart_outlined),
+              label: 'Order Accepted'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart_outlined), label: 'Order Pending'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.perm_identity_outlined,
@@ -63,8 +72,9 @@ class _HomePageState extends State<HomePage> {
           });
         },
         children: [
-          Home(),
+          ItemAddScreen(),
           OrdersList(),
+          OrdersAccepted(),
           AccountScreen(),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:karobar/widgets/green_appbar.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -15,22 +16,8 @@ class Home extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFd0f1dd),
-                    borderRadius: BorderRadius.circular(22),
-                  ),
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Text(
-                      'Grocery Items',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
-                    ),
-                  ),
+                GreenAppBar(
+                  title: 'Grocery Items',
                 ),
                 SizedBox(
                   height: 20,
