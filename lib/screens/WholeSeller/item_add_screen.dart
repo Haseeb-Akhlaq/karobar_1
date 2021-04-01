@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:karobar/screens/WholeSeller/new_item_screen.dart';
 import 'package:karobar/widgets/green_appbar.dart';
 
 class ItemAddScreen extends StatelessWidget {
@@ -67,21 +68,26 @@ class ItemAddScreen extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF09b44d),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      'ADD MORE ITEMS',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                        fontFamily: 'Montserrat_Bold',
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, NewItemScreen.route);
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF09b44d),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        'ADD MORE ITEMS',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontFamily: 'Montserrat_Bold',
+                        ),
                       ),
                     ),
                   ),

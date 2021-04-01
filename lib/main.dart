@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:karobar/screens/Retailer/order_List.dart';
 import 'package:karobar/screens/WholeSeller/item_add_screen.dart';
+import 'package:karobar/screens/WholeSeller/new_item_screen.dart';
 import 'package:karobar/screens/orders_accepted.dart';
 
 import 'file:///C:/Users/haseeb/AndroidStudioProjects/karobar/lib/screens/WholeSeller/account_screen.dart';
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
       home: WholeSellerHomePage(),
+      routes: {
+        NewItemScreen.route: (ctx) => NewItemScreen(),
+      },
     );
   }
 }
